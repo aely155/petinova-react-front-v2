@@ -1,0 +1,27 @@
+.cart-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+.cart {
+    width: calc(100% - 40px);
+    background-color: white;
+
+    border-radius: 25px 25px 0 0;
+    position: fixed;
+    z-index: 5;
+    left: 20px;
+    bottom: 0px;
+    height: 250px;
+    padding: 10px;
+    padding-top: 50px;
+    box-sizing: border-box;
+
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
+}
+
+.close-cart {
+    height: calc(100vh - 250px);
+}

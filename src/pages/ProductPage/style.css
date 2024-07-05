@@ -1,0 +1,65 @@
+.product-page {
+    padding: 20px;
+}
+
+.product-page-image {
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.product-page-image h1 {
+    font-size: 24px;
+    font-family: "Anton SC", sans-serif;
+    color: #F38962;
+}
+
+.product-page-description-section {
+    font-family: "Red Hat Display", sans-serif;
+    margin-bottom: 20px;
+}
+.product-page-description-section:last-child {
+    margin-bottom: 0px;
+}
+
+.product-page-description-section h2 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.product-page-description-section p {
+    font-size: 13px;
+}
+
+.product-page-image-action{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.product-page-image-action button{
+    font-family: "Red Hat Display", sans-serif;
+    border: none;
+    display: block;
+    width: 160px;
+    font-size: 12px;
+    border-radius: 8px 8px 0 0;
+    color: #F38962;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #F38962;
+}
+.product-page-image-action button:last-child{
+    color: white;
+    font-size: 15px;
+    background-color: #F38962;
+    border-radius: 0 0 8px 8px;
+}
+
+.product-page-image-price{
+    background-color: white;
+    color: #F38962;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    font-family: "sans-serif";
+    font-weight: 600;
+}

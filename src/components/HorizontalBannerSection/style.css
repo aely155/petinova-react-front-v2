@@ -1,0 +1,21 @@
+.horizontal-banner-section{
+}
+
+.horizontal-banner-section-text{
+    display: flex;
+    padding: 20px;
+    padding-right: 40%;
+    box-sizing: border-box;
+    background-color: #D4972D;
+    color: white;
+    align-items: center;
+    height: 120px;
+    font-family: "Anton SC", sans-serif;
+    font-size: 20px;
+}
+
+.horizontal-banner-section-image{
+    background-image: url('./Imagem\ 6.png');
+    background-size: cover;
+    height: 120px;
+}

@@ -1,0 +1,26 @@
+.menu{
+    width: calc(100% - 40px);
+    background-color: white;
+
+    border-radius: 25px;
+    position: absolute;
+    z-index: 0;
+    left: 20px;
+    top: 20px;
+    padding: 10px;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    box-sizing: border-box;
+}
+
+.menu-item{
+    font-family: "Anton SC", sans-serif;
+    padding: 10px 0px;
+    color: black;
+}
+
+.menu-item:first-child{
+    font-family: "Anton SC", sans-serif;
+    color: #F38962;
+    padding: 10px 0px;
+}
