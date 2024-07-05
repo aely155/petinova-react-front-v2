@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ErrorLogin from '../../components/ErrorLogin';
 import axios from 'axios';
+import Cart from '../../components/Cart';
+import LateralButtons from '../../components/LateralButtons';
 
 function Login() {
     const token = localStorage.getItem('token');
@@ -70,6 +72,8 @@ function Login() {
     return (
         <>
             <Header />
+            <Cart />
+            <LateralButtons />
             <Main>
                 <LoginForm title={'Entrar'}>
                     <InputForm value={email} onchange={setEmail} label={"Email:"} />

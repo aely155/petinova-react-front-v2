@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import ErrorLogin from '../../components/ErrorLogin';
 import axios from 'axios';
+import LateralButtons from '../../components/LateralButtons';
+import Cart from '../../components/Cart';
 
 function Register() {
     const navigate = useNavigate()
@@ -80,6 +82,8 @@ function Register() {
     return (
         <>
             <Header />
+            <Cart />
+            <LateralButtons />
             <Main>
                 <LoginForm tittle={'Registrar'}>
                     <InputForm value={clientName} onchange={setClientName} label={"Nome completo:"} />

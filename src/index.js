@@ -11,11 +11,18 @@ import { MenuProvider } from "./contexts/menuContext";
 import { CartProvider } from "./contexts/cartContext";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import MyProfile from "./pages/MyProfile";
+import ProtectedRoute from './ProtectedRoute'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+
+    path: "/product/:id",
+    element: <ProductPage />,
   },
   {
     path: "/login",
@@ -26,8 +33,11 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: "/product/:id",
-    element: <ProductPage />,
+    path: "/profile",
+    element:
+      <ProtectedRoute>
+        <MyProfile />
+      </ProtectedRoute>,
   },
 ]);
 

@@ -3,9 +3,10 @@ import { Navigate } from 'react-router-dom';
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem('token');
+  console.log("token")
   if (!token) {
     // Se o token não existir, redirecione para a página de login
-    return <Navigate to="/signin" />;
+    return <Navigate to="/login" />;
   }
   // Se o token existir, renderize o componente filho
   return children;

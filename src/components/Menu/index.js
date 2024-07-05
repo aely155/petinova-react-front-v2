@@ -12,13 +12,16 @@ function Menu() {
             {menuIsOpen &&
                 <div className='menu bounceInDown'>
                     {userData ?
-                        <div onClick={() => { navigate('/login'); setMenuIsOpen(false) }} className='menu-item'>
+                        <div onClick={() => { navigate('/profile'); setMenuIsOpen(false) }} className='menu-item'>
                             {userData.fullname} | MEU PERFIL
                         </div> :
                         <div onClick={() => { navigate('/login'); setMenuIsOpen(false) }} className='menu-item'>
                             ENTRAR | REGISTRAR
                         </div>
                     }
+                    <div onClick={() => { navigate('/'); setMenuIsOpen(false) }} className='menu-item'>
+                        INÍCIO
+                    </div>
                     <div className='menu-item'>
                         PRODUTOS
                     </div>
