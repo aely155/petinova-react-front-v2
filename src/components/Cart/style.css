@@ -25,3 +25,11 @@
 .close-cart {
     height: calc(100vh - 250px);
 }
+
+@media only screen and (min-width: 1024px) {
+    .cart {
+        width: 60vw;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

@@ -8,8 +8,8 @@
 }
 
 .header {
-    height: 45px;
-    padding: 5px 20px;
+    height: 50px;
+    padding: 5px 10px;
 
     background-color: #5B1D72;
     margin: 10px;
@@ -23,7 +23,9 @@
 
     position: absolute;
     width: calc(100% - 40px);
-    z-index: 1;
+    z-index: 2;
+
+    
 }
 
 .header-content {
@@ -43,4 +45,12 @@
 
 .header-content h2 {
     font-size: 50px;
+}
+
+@media only screen and (min-width: 1024px) {
+    .header {
+        width: 60vw;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }

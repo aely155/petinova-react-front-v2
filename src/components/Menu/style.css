@@ -1,26 +1,40 @@
-.menu{
+.menu {
     width: calc(100% - 40px);
     background-color: white;
 
     border-radius: 25px;
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     left: 20px;
     top: 20px;
     padding: 10px;
     padding-top: 50px;
     padding-bottom: 25px;
     box-sizing: border-box;
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
-.menu-item{
+.menu-item {
     font-family: "Anton SC", sans-serif;
     padding: 10px 0px;
-    color: black;
+    color: white;
+    text-shadow: 0px 0px 5px #00000076;
 }
 
-.menu-item:first-child{
+.menu-item:first-child {
     font-family: "Anton SC", sans-serif;
     color: #F38962;
     padding: 10px 0px;
+}
+
+@media only screen and (min-width: 1024px) {
+    .menu {
+        width: 60vw;
+        left: 20.9vw;
+    }
 }

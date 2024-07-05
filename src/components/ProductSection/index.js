@@ -20,7 +20,7 @@ function ProductSection() {
                 </button>
             </div>
             <div className='product-section-image'>
-                <img width={"80%"} src={product} alt='product image' />
+                <img height={"80%"} src={product} alt='product image' />
             </div>
         </div>
     );

@@ -9,11 +9,21 @@ import Home from "./pages/Home";
 import ProductPage from "./pages/ProductPage";
 import { MenuProvider } from "./contexts/menuContext";
 import { CartProvider } from "./contexts/cartContext";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
   {
     path: "/product/:id",
