@@ -16,6 +16,7 @@ export const CartProvider = ({ children }) => {
     }
     setCart((prevCart) => [...prevCart, item]);
     setCartIsOpen(true)
+    console.log(cart)
   };
 
   // Remover um item do carrinho

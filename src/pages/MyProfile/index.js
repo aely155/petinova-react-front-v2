@@ -21,11 +21,11 @@ function MyProfile() {
             <Main>
                 <ProfileCard />
                 <OptionButton bg="gray" color='white'>
-                    <FiPackage style={{ marginRight: "10px" }} />
+                    <FiPackage style={{ marginRight: "20px" }} />
                     Meus Pedidos
                 </OptionButton>
                 <OptionButton onclick={desconect} bg="red">
-                    <IoMdExit style={{ marginRight: "10px" }} />
+                    <IoMdExit style={{ marginRight: "20px" }} />
                     Sair
                 </OptionButton>
             </Main>
