@@ -16,7 +16,7 @@ function ProductPage() {
 
     const { addToCart } = useCart();
     const { productId } = useParams()
-
+    let a
     const [product, setProduct] = useState({})
     const [description, setDescription] = useState([])
 
