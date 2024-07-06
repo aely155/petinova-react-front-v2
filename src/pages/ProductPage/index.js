@@ -8,19 +8,24 @@ import productimage from './product.png'
 
 import './style.css'
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function ProductPage() {
+    const navigate = useNavigate()
     const apiUrl = process.env.REACT_APP_API_URL;
     const userData = JSON.parse(localStorage.getItem('userData'))
 
     const { addToCart } = useCart();
     const { productId } = useParams()
-    let a
     const [product, setProduct] = useState({})
     const [description, setDescription] = useState([])
 
-    const crateCheckout = () => {
+    const createCheckout = () => {
+        const token = localStorage.getItem('token');
+        if(!token){
+            navigate('/login')
+            return
+        }
         axios.post(`${apiUrl}api/stripe/create-checkout-session`, { products: [product], id: userData.id }).then((response) => {
             window.location.href = response.data.url
         })
@@ -43,16 +48,16 @@ function ProductPage() {
                 {product &&
                     <div className="product-page">
                         <div className="product-page-image">
-                            <img src={productimage} alt="product image" />
+                            <img src={product.urlimage} alt="product image" />
                             <h1>{product.name}</h1>
                             <div className="product-page-image-price">
                                 R${product.price}
                             </div>
                             <div className="product-page-image-action">
-                                <button onClick={()=>addToCart(product)}>
+                                <button onClick={() => addToCart(product)}>
                                     Adicionar ao carrinho
                                 </button>
-                                <button onClick={crateCheckout}>
+                                <button onClick={createCheckout}>
                                     Comprar
                                 </button>
                             </div>

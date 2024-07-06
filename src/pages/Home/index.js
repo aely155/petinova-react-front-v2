@@ -13,9 +13,9 @@ function Home() {
             <LateralButtons />
             <Header />
             <Main>
-                <ProductSection />
+                <ProductSection id={32}/>
                 <SimpleBannerSection />
-                <ProductSection />
+                <ProductSection id={14}/>
                 <HorizontalBannerSection />
             </Main>
         </>

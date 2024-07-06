@@ -4,6 +4,10 @@
     height: 300px;
 }
 
+.product-section-image img{
+    height: 120px;
+}
+
 .product-section-main{
     background-color: #F38962;
     display: flex;
