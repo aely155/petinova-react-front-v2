@@ -1,6 +1,9 @@
 .order-item {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr 0.2fr;
+    height: 80px;
     align-items: center;
+    justify-items: left;
     margin-bottom: 10px;
 }
 .order-item img{
@@ -16,7 +19,6 @@
     text-align: left;
 }
 .order-item-infos p{
-    margin-top: 5px;
     color: #F38962;
     font-family: "Anton SC", sans-serif;
     font-size: 13px;

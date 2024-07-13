@@ -1,4 +1,4 @@
-.input-form input{
+.input-form textarea, input{
     padding: 4px;
     border-radius: 8px;
     border: none;

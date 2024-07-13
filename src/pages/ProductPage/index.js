@@ -4,7 +4,6 @@ import Header from "../../components/Header";
 import LateralButtons from "../../components/LateralButtons";
 import Main from "../../components/Main";
 import { useCart } from "../../contexts/cartContext";
-import productimage from './product.png'
 
 import './style.css'
 import axios from "axios";

@@ -13,11 +13,24 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import MyProfile from "./pages/MyProfile";
 import ProtectedRoute from './ProtectedRoute'
+import ContactPage from "./pages/ContactPage";
+import ProductsPage from "./pages/ProductsPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/contact",
+    element:
+      <ProtectedRoute>
+        <ContactPage />
+      </ProtectedRoute>,
+  },
+  {
+    path: "/products",
+    element: <ProductsPage />,
   },
   {
 

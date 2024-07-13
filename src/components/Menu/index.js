@@ -22,13 +22,13 @@ function Menu() {
                     <div onClick={() => { navigate('/'); setMenuIsOpen(false) }} className='menu-item'>
                         INÍCIO
                     </div>
-                    <div className='menu-item'>
+                    <div onClick={() => { navigate('/products'); setMenuIsOpen(false) }} className='menu-item'>
                         PRODUTOS
                     </div>
                     <div className='menu-item'>
                         AJUDE UM ANIMAL
                     </div>
-                    <div className='menu-item'>
+                    <div onClick={() => { navigate('/contact'); setMenuIsOpen(false) }} className='menu-item'>
                         CONTATO
                     </div>
                 </div>
