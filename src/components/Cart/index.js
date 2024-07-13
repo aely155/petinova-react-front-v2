@@ -2,14 +2,19 @@ import axios from 'axios';
 import { useCart } from '../../contexts/cartContext';
 import OrderItem from '../OrderItem';
 import './style.css'
+import { useNavigate } from 'react-router-dom';
 
 function Cart() {
+    const navigate = useNavigate()
     const apiUrl = process.env.REACT_APP_API_URL
     const userData = localStorage.getItem('userData')
     const { cartIsOpen, setCartIsOpen } = useCart()
     const { cart } = useCart();
 
     const createCheckout = () => {
+        if(!userData){
+            navigate('/login')
+        }
         axios.post(`${apiUrl}api/stripe/create-checkout-session`, { products: cart, id: userData.id }).then((response) => {
             window.location.href = response.data.url
         })
