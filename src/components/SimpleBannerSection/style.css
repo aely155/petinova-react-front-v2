@@ -35,15 +35,50 @@
     color: white;
 }
 
+@media only screen and (min-width: 425px) {
+    .simple-banner-section img {
+        left: 50%;
+    }
+    
+}
+@media only screen and (min-width: 550px) {
+    .simple-banner-section img {
+        left: 58%;
+    }
+    
+}
 @media only screen and (min-width: 768px) {
     .simple-banner-section{
         width: 80%;
         margin: 50px auto;
     }
+    .simple-banner-section h1 {
+        font-size: 15px;
+        width: 100%;
+    }
+    .simple-banner-section img {
+        height: 250px;
+        bottom: 276px;
+        left: 60%;
+        position: absolute;
+        display: flex;
+    }
+    
 }
 
 @media only screen and (min-width: 1024px) {
     .simple-banner-section {
         height: 300px;
+    }
+    .simple-banner-section h1 {
+        font-size: 15px;
+        width: 100%;
+    }
+    .simple-banner-section img {
+        height: 450px;
+        bottom: 263px;
+        left: 45%;
+        position: absolute;
+        display: flex;
     }
 }
