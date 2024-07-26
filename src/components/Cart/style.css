@@ -17,6 +17,7 @@
     max-height: 400px;
     padding: 10px;
     padding-top: 20px;
+    padding-bottom: 10vh;
     box-sizing: border-box;
     box-shadow: 20px 20px 60px #bebebe,
         -20px -20px 60px #ffffff;
