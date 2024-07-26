@@ -10,7 +10,7 @@
 }
 
 .header {
-    height: 60px;
+    height: 80px;
     padding: 5px 10px;
     z-index: 3;
     margin: 10px;
@@ -47,14 +47,26 @@
     color: #E5B285;
 }
 
-.header-cat{
+.header-cat {
     height: 200px;
     position: relative;
     bottom: 250px;
     text-align: center;
 }
-.header-cat img{
+
+.header-cat img {
     height: 410px;
+}
+
+.header-hamburger {
+    background-color: #0165a3ee;
+    padding: 13px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
 }
 
 @media only screen and (min-width: 1024px) {

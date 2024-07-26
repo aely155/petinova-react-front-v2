@@ -55,3 +55,21 @@
     position: relative;
     z-index: 5;
 }
+
+.popup-container{
+    background-color: red;
+    width: 100vw;
+    height: 100vh;
+}
+
+@media only screen and (min-width: 768px) {
+    .popup {
+        width: calc(100vw - 200px);
+        height: calc(100vh - 200px);
+        box-sizing: border-box;
+        padding: 20px;
+        position: fixed;
+    
+        margin: 100px;
+    }
+}

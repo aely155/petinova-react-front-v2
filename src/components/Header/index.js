@@ -15,20 +15,25 @@ function Header() {
     return (
         <header className="header-container">
             <div className='header'>
-                <img onClick={() => navigate('/')} height={"100%"} src={logo} alt="pet inova logo" />
-                <RxHamburgerMenu onClick={()=> setMenuIsOpen(!menuIsOpen)} size={35} color='#E5B285'/>
+                <img onClick={() => navigate('/')} height={"90%"} src={logo} alt="pet inova logo" />
+                <div className='header-hamburger'>
+                    <RxHamburgerMenu 
+                    onClick={() => setMenuIsOpen(!menuIsOpen)} 
+                    size={25} 
+                    color='#EAEAEA' />
+                </div>
             </div>
             <Menu />
             <div className='header-content'>
                 <div>
-                    <h1>UM MÊS DE <span style={{textDecoration:"underline"}}>FRETE</span></h1>
+                    <h1>UM MÊS DE <span style={{ textDecoration: "underline" }}>FRETE</span></h1>
                     <h2>GRÁTIS</h2>
                 </div>
             </div>
             <div className='header-cat'>
-                <img alt='cat' src={cat}/>
+                <img alt='cat' src={cat} />
             </div>
-            <img/>
+            <img />
         </header>
     );
 }
