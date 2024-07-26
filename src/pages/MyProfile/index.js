@@ -64,7 +64,12 @@ function MyProfile() {
                                 return (
                                     <OptionButton
                                         onclick={toggleOrderIsOpen}
-                                        bg="#5B1D72"
+                                        bg={order.order_status === "shipping"
+                                            ?
+                                            "#f38962"
+                                            :
+                                            "#33F8E5"
+                                        }
                                         color='white'>
                                         <h1>
                                             {dataFormatada}
@@ -74,7 +79,7 @@ function MyProfile() {
 
                                                 <span
                                                     style={{
-                                                        color:"#F5822F",
+                                                        color: "white",
                                                         letterSpacing: 2
                                                     }}
                                                 >
@@ -83,7 +88,7 @@ function MyProfile() {
                                                 :
                                                 <span
                                                     style={{
-                                                        color:"#F5822F",
+                                                        color: "#F5822F",
                                                         letterSpacing: 2
                                                     }}
                                                 >
@@ -92,8 +97,8 @@ function MyProfile() {
                                             }
                                         </h1>
                                         <ul>
-                                            {order.order_items.map(item=>{
-                                                return(
+                                            {order.order_items.map(item => {
+                                                return (
                                                     <li>
                                                         {item.description}
                                                     </li>
