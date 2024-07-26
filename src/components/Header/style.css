@@ -12,7 +12,7 @@
 .header {
     height: 60px;
     padding: 5px 10px;
-
+    z-index: 3;
     margin: 10px;
 
     border-radius: 50px;
@@ -24,9 +24,6 @@
 
     position: fixed;
     width: calc(100% - 40px);
-    z-index: 5;
-
-    
 }
 
 .header-content {

@@ -57,13 +57,15 @@ function ProductPage() {
                             </div>
                             <div className="product-page-buttons">
                                 <div className="product-page-buttons">
-                                    <button>Adicionar ao carrinho</button>
-                                    <button>Comprar agora</button>
+                                    <button onClick={()=>{
+                                        addToCart(product)
+                                    }}>Adicionar ao carrinho</button>
+                                    <button onClick={createCheckout}>Comprar agora</button>
                                 </div>
                             </div>
                             <div className="product-page-shiping">
                                 <h3>Receba em sua casa em até 5 dias, por nossa conta!</h3>
-                                <TbTruckDelivery color="#458DBB" size={40}
+                                <TbTruckDelivery color="white" size={40}
                                 />
                             </div>
                             <div className="product-page-description">

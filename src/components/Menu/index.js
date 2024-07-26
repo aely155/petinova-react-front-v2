@@ -10,28 +10,34 @@ function Menu() {
     return (
         <>
             {menuIsOpen &&
-                <div className='menu bounceInDown'>
-                    {userData ?
-                        <div onClick={() => { navigate('/profile'); setMenuIsOpen(false) }} className='menu-item'>
-                            {userData.fullname} | MEU PERFIL
-                        </div> :
-                        <div onClick={() => { navigate('/login'); setMenuIsOpen(false) }} className='menu-item'>
-                            ENTRAR | REGISTRAR
+                <>
+                    <div className='menu bounceInDown'>
+                        {userData ?
+                            <div onClick={() => { navigate('/profile'); setMenuIsOpen(false) }} className='menu-item'>
+                                {userData.fullname} | MEU PERFIL
+                            </div> :
+                            <div onClick={() => { navigate('/login'); setMenuIsOpen(false) }} className='menu-item'>
+                                ENTRAR | REGISTRAR
+                            </div>
+                        }
+                        <div onClick={() => { navigate('/'); setMenuIsOpen(false) }} className='menu-item'>
+                            INÍCIO
                         </div>
-                    }
-                    <div onClick={() => { navigate('/'); setMenuIsOpen(false) }} className='menu-item'>
-                        INÍCIO
+                        <div onClick={() => { navigate('/products'); setMenuIsOpen(false) }} className='menu-item'>
+                            PRODUTOS
+                        </div>
+                        <div className='menu-item'>
+                            AJUDE UM ANIMAL
+                        </div>
+                        <div onClick={() => { navigate('/contact'); setMenuIsOpen(false) }} className='menu-item'>
+                            CONTATO
+                        </div>
                     </div>
-                    <div onClick={() => { navigate('/products'); setMenuIsOpen(false) }} className='menu-item'>
-                        PRODUTOS
+                    <div className='close-menu'
+                        onClick={ ()=>setMenuIsOpen(false)}
+                    >
                     </div>
-                    <div className='menu-item'>
-                        AJUDE UM ANIMAL
-                    </div>
-                    <div onClick={() => { navigate('/contact'); setMenuIsOpen(false) }} className='menu-item'>
-                        CONTATO
-                    </div>
-                </div>
+                </>
             }
         </>
     );
