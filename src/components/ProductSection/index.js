@@ -27,7 +27,7 @@ function ProductSection({ id, tagTextColor, tagColor, tag }) {
     }, [productId, apiUrl])
     return (
         <div
-            className='product-section'
+            className='product-section elemento-flutuante'
             style={{
                 color: tagTextColor,
                 backgroundImage: `url(${product.urlimage})`,
