@@ -71,8 +71,8 @@ function Login() {
 
     return (
         <>
-            <Header />
             <Cart />
+            <Header />
             <LateralButtons />
             <Main>
                 <LoginForm title={'Entrar'}>
