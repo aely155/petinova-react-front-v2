@@ -1,6 +1,6 @@
 import './style.css'
 
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -42,7 +42,7 @@ function ProductSection({ id, tagTextColor, tagColor, tag }) {
                 <p>
                     {truncatedString}
                 </p>
-                <button onClick={()=>navigate(`/product/${product.id}`)}>
+                <button onClick={() => navigate(`/product/${product.id}`)}>
                     Eu quero
                 </button>
             </div>
