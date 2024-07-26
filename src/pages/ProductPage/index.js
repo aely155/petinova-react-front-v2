@@ -48,6 +48,10 @@ function ProductPage() {
                 {product &&
                     <>
                         <div className="product-page">
+                            <div className="product-page-tab">
+                                Frete
+                                Gratis
+                            </div>
                             <img src={product.urlimage} />
                             <div>
                                 <h2>{product.name}</h2>
