@@ -53,7 +53,7 @@ function ProductPage() {
                             <div>
                                 <h2>{product.name}</h2>
                                 <h4>Por</h4>
-                                <h1>R${product.price.replace(".", ",")}</h1>
+                                <h1>R${product.price}</h1>
                             </div>
                             <div className="product-page-buttons">
                                 <div className="product-page-buttons">
