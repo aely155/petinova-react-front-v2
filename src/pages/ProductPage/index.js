@@ -8,7 +8,6 @@ import { useCart } from "../../contexts/cartContext";
 import './style.css'
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import { FaTruckFast, FaTruckFront } from "react-icons/fa6";
 import { TbTruckDelivery } from "react-icons/tb";
 
 function ProductPage() {
