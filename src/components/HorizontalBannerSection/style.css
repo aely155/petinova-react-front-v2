@@ -18,7 +18,8 @@
 
 .horizontal-banner-section-image{
     background-image: url('./Imagem\ 6.png');
-    background-size: cover;
+    background-size: 100%;
+    background-position: center;
     height: 120px;
 }
 
