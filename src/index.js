@@ -15,6 +15,7 @@ import MyProfile from "./pages/MyProfile";
 import ProtectedRoute from './ProtectedRoute'
 import ContactPage from "./pages/ContactPage";
 import ProductsPage from "./pages/ProductsPage";
+import { PopUpProvider } from "./contexts/popUpContext";
 
 const router = createBrowserRouter([
   {
@@ -56,10 +57,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <MenuProvider>
-      <CartProvider>
-        <RouterProvider router={router} />
-      </CartProvider>
-    </MenuProvider>
+    <PopUpProvider>
+      <MenuProvider>
+        <CartProvider>
+          <RouterProvider router={router} />
+        </CartProvider>
+      </MenuProvider>
+    </PopUpProvider>
   </React.StrictMode>
 );

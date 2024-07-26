@@ -1,0 +1,57 @@
+.popup {
+    width: calc(100vw - 40px);
+    height: calc(100vh - 40px);
+    box-sizing: border-box;
+    padding: 20px;
+    position: fixed;
+
+    margin: 20px;
+
+    z-index: 4;
+
+    left: 0;
+    bottom: 0;
+    border-radius: 18px;
+    color: white;
+    overflow: scroll;
+}
+
+.popup h1{
+    font-family: "Anton SC", sans-serif;
+    font-size: 15px;
+    
+    margin: 20px 0px;
+}
+.popup h2{
+    font-family: "Anton SC", sans-serif;
+    font-size: 13px;
+    
+    margin: 20px 0px;
+    color: orange;
+}
+
+.popup p, li{
+    font-family: "poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    margin: 20px 0px;
+    line-height: 15px;
+}
+.popup li{
+    list-style: disc;
+    list-style-position: inside;
+}
+
+.highlight{
+    color: orange;
+    font-weight: 500;
+}
+
+.popup-close {
+    left: 100%;
+    transform: translateX(-100%);
+    width: 8vw;
+    height: 8vw;
+    position: relative;
+    z-index: 5;
+}
