@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import Menu from '../Menu';
 import { useContext } from 'react';
 import { MenuContext } from '../../contexts/menuContext';
+import { RxHamburgerMenu } from 'react-icons/rx';
 
 function Header() {
     const navigate = useNavigate()
@@ -15,7 +16,7 @@ function Header() {
         <header className="header-container">
             <div className='header'>
                 <img onClick={() => navigate('/')} height={"100%"} src={logo} alt="pet inova logo" />
-                <img onClick={()=> setMenuIsOpen(!menuIsOpen)} height={"30%"} src={hamburger} alt="hamburger icon" />
+                <RxHamburgerMenu onClick={()=> setMenuIsOpen(!menuIsOpen)} size={35} color='#E5B285'/>
             </div>
             <Menu />
             <div className='header-content'>
