@@ -7,26 +7,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     transform: translateY(-50%);
-    z-index: 0;
-}
-
-.lateral-buttons-buttons {
+    z-index: 4;
     padding: 5px;
 }
 
+
 .lateral-buttons-buttons-button {
-    background-color: #E05D31;
-    height: 50px;
-    width: 50px;
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);    height: 40px;
+    width: 40px;
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.lateral-buttons-buttons-button:last-child {
-    background-color: #F38962;
-    margin-top: 10px;
+.lateral-buttons-buttons-button:first-child {
+    margin-bottom: 30px;
 }

@@ -9,6 +9,10 @@
     font-family: "Anton SC", sans-serif;
     text-shadow: 0px 0px 6px rgba(66, 68, 90, 1);
     color: white;
+    margin-bottom: 60px;
+    border-radius: 17px;
+    overflow: hidden;
+    margin: 10px;
 }
 
 .simple-banner-section button {
@@ -16,11 +20,18 @@
     margin-top: 10px;
     height: 40px;
     border: none;
+    border-radius: 17px;
     font-family: "Anton SC", sans-serif;
     background-color: #F38962;
     color: white;
 }
 
+@media only screen and (min-width: 768px) {
+    .simple-banner-section{
+        width: 80%;
+        margin: 50px auto;
+    }
+}
 
 @media only screen and (min-width: 1024px) {
     .simple-banner-section {

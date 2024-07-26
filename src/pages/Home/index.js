@@ -5,6 +5,7 @@ import HorizontalBannerSection from '../../components/HorizontalBannerSection'
 import LateralButtons from '../../components/LateralButtons';
 import Cart from '../../components/Cart';
 import Main from '../../components/Main';
+import ProductGrid from '../../components/ProductsGrid';
 
 function Home() {
     return (
@@ -13,9 +14,11 @@ function Home() {
             <LateralButtons />
             <Header />
             <Main>
-                <ProductSection id={32}/>
+                <ProductGrid>
+                    <ProductSection id={32} tag={"NOVO"} tagTextColor={"white"} tagColor={"red"} />
+                    <ProductSection id={14} tag={"POUCAS UNIDADES"} tagTextColor={"white"} tagColor={"black"} />
+                </ProductGrid>
                 <SimpleBannerSection />
-                <ProductSection id={14}/>
                 <HorizontalBannerSection />
             </Main>
         </>

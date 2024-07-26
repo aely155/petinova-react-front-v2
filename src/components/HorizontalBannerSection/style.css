@@ -1,4 +1,7 @@
 .horizontal-banner-section{
+    border-radius: 17px;
+    overflow: hidden;
+    margin: 10px;
 }
 
 .horizontal-banner-section-text{
@@ -18,4 +21,11 @@
     background-image: url('./Imagem\ 6.png');
     background-size: cover;
     height: 120px;
+}
+
+@media only screen and (min-width: 768px) {
+    .horizontal-banner-section{
+        width: 85%;
+        margin: 50px auto;
+    }
 }
