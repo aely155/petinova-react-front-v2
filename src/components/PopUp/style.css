@@ -74,3 +74,14 @@
 
     }
 }
+
+@media only screen and (min-width: 1024px) {
+    .popup-content{
+        overflow: scroll;
+        scrollbar-width: 30px;
+        height: 80%;
+    }
+    .popup-content::-webkit-scrollbar{
+        background-color: transparent;
+    }
+}

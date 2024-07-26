@@ -16,11 +16,14 @@ function Header() {
         <header className="header-container">
             <div className='header'>
                 <img onClick={() => navigate('/')} height={"90%"} src={logo} alt="pet inova logo" />
-                <div className='header-hamburger'>
-                    <RxHamburgerMenu 
-                    onClick={() => setMenuIsOpen(!menuIsOpen)} 
-                    size={25} 
-                    color='#EAEAEA' />
+                <div
+                    className='header-hamburger'
+                    onClick={() => setMenuIsOpen(!menuIsOpen)}
+                >
+                    <RxHamburgerMenu
+
+                        size={25}
+                        color='#EAEAEA' />
                 </div>
             </div>
             <Menu />

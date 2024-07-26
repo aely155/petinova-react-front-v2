@@ -1,88 +1,92 @@
 .simple-banner-section {
-    background-image: linear-gradient( 178.7deg,  rgb(111, 170, 241) 5.6%, rgba(2,71,157,1) 95.3% );    height: 150px;
-    padding: 20px;
-    display: flex;
-    justify-content: left;
+    background-image: linear-gradient(178.7deg, rgb(111, 170, 241) 5.6%, rgba(2, 71, 157, 1) 95.3%);
+
+    height: 180px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     align-items: center;
-    font-family: "Anton SC", sans-serif;
-    text-shadow: 0px 0px 6px rgba(66, 68, 90, 1);
-    color: white;
-    margin-bottom: 60px;
-    border-radius: 17px 17px 0px 17px;
-    overflow: hidden;
+    justify-content: center;
     margin: 10px;
-}
-.simple-banner-section h1 {
-    font-size: 15px;
-    width: 70%;
-}
-.simple-banner-section img {
-    height: 250px;
-    bottom: 236px;
-    left: 45%;
-    position: absolute;
-    display: flex;
+    border-radius: 18px;
 }
 
-.simple-banner-section button {
-    width: 60%;
-    margin-top: 10px;
-    height: 40px;
+.simple-banner-section-action {
+    padding-left: 20px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.simple-banner-section-action button {
+    width: 100%;
+    bottom: none;
+    text-align: left;
+    padding: 10px;
+    border-radius: 12px;
     border: none;
-    border-radius: 17px;
-    font-family: "Anton SC", sans-serif;
-    background-color: #F38962;
+    background-color: #F04237;
+    color: white;
+    font-family: "anton", Helvetica, sans-serif;
+}
+
+.simple-banner-section-action h1 {
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "poppins", Helvetica, sans-serif;
+    margin-bottom: 5px;
     color: white;
 }
 
-@media only screen and (min-width: 300px) {
-    .simple-banner-section img {
-        left: 46%;
-    }
+.simple-banner-section-img {
+    position: absolute;
+    left: 45%;
+    height: 250px;
+    transform: translateY(-20px);
 }
+
+.simple-banner-section-img img {
+    height: 250px;
+}
+
 @media only screen and (min-width: 360px) {
-    .simple-banner-section img {
-        bottom: 218px;
+    .simple-banner-section-img {
+        left: 50%;
     }
 }
+
+@media only screen and (min-width: 400px) {
+    .simple-banner-section-img {
+        left: 55%;
+    }
+}
+
 @media only screen and (min-width: 550px) {
-    .simple-banner-section img {
-        left: 58%;
-    }
-    
-}
-@media only screen and (min-width: 768px) {
-    .simple-banner-section{
-        width: 80%;
-        margin: 50px auto;
-    }
-    .simple-banner-section h1 {
-        font-size: 15px;
-        width: 100%;
-    }
-    .simple-banner-section img {
-        height: 250px;
-        bottom: 258px;
+    .simple-banner-section-img {
         left: 60%;
-        position: absolute;
-        display: flex;
     }
-    
+}
+
+@media only screen and (min-width: 670px) {
+    .simple-banner-section-img {
+        left: 65%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .simple-banner-section-img {
+        left: 70%;
+    }
+
+    .simple-banner-section {
+        margin: 0 7.5%;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
-    .simple-banner-section {
-        height: 300px;
-    }
-    .simple-banner-section h1 {
-        font-size: 15px;
-        width: 100%;
-    }
-    .simple-banner-section img {
-        height: 450px;
-        bottom: 246px;
-        left: 45%;
-        position: absolute;
-        display: flex;
+    .simple-banner-section-img {
+        left: 65;
     }
 }
