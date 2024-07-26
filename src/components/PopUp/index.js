@@ -14,19 +14,17 @@ function PopUp({ color, children, tittle, text, action, button }) {
     return (
         <>
             {visible &&
-                <div onClick={()=>setIsOpen(false)} className='popup-container'>
-                    <div
-                        className="popup at-item"
-                        style={{
-                            backgroundColor: color
-                        }}
-                    >
-                        <div className='popup-close'>
-                            <SlClose onClick={() => setIsOpen(false)} color='white' size={25} />
-                        </div>
-                        <div>
-                            {children}
-                        </div>
+                <div
+                    className="popup at-item"
+                    style={{
+                        backgroundColor: color
+                    }}
+                >
+                    <div className='popup-close'>
+                        <SlClose onClick={() => setIsOpen(false)} color='white' size={25} />
+                    </div>
+                    <div className='popup-content'>
+                        {children}
                     </div>
                 </div>
             }

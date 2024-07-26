@@ -13,7 +13,6 @@
     bottom: 0;
     border-radius: 18px;
     color: white;
-    overflow: scroll;
 }
 
 .popup h1{
@@ -56,11 +55,11 @@
     z-index: 5;
 }
 
-.popup-container{
-    z-index: 4;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
+.popup-content{
+    overflow: scroll;
+    scrollbar-width: 30px;
+    scrollbar-color: black;
+    height: 90%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -72,5 +71,6 @@
         position: fixed;
     
         margin: 100px;
+
     }
 }
