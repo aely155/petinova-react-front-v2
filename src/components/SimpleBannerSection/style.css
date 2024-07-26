@@ -35,7 +35,7 @@
     color: white;
 }
 
-@media only screen and (min-width: 380px) {
+@media only screen and (min-width: 300px) {
     .simple-banner-section img {
         left: 50%;
     }
