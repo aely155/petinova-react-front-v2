@@ -37,7 +37,12 @@
 
 @media only screen and (min-width: 300px) {
     .simple-banner-section img {
-        left: 50%;
+        left: 46%;
+    }
+}
+@media only screen and (min-width: 360px) {
+    .simple-banner-section img {
+        bottom: 218px;
     }
 }
 @media only screen and (min-width: 550px) {
@@ -57,7 +62,7 @@
     }
     .simple-banner-section img {
         height: 250px;
-        bottom: 276px;
+        bottom: 258px;
         left: 60%;
         position: absolute;
         display: flex;
@@ -75,7 +80,7 @@
     }
     .simple-banner-section img {
         height: 450px;
-        bottom: 263px;
+        bottom: 246px;
         left: 45%;
         position: absolute;
         display: flex;
