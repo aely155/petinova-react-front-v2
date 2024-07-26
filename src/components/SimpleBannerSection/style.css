@@ -8,7 +8,7 @@
     text-shadow: 0px 0px 6px rgba(66, 68, 90, 1);
     color: white;
     margin-bottom: 60px;
-    border-radius: 17px;
+    border-radius: 17px 17px 0px 17px;
     overflow: hidden;
     margin: 10px;
 }
@@ -19,7 +19,7 @@
 .simple-banner-section img {
     height: 250px;
     bottom: 236px;
-    left: 43%;
+    left: 45%;
     position: absolute;
     display: flex;
 }
@@ -35,7 +35,7 @@
     color: white;
 }
 
-@media only screen and (min-width: 425px) {
+@media only screen and (min-width: 380px) {
     .simple-banner-section img {
         left: 50%;
     }
