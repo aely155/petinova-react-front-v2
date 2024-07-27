@@ -1,66 +1,71 @@
 .popup {
     width: calc(100vw - 40px);
-    height: calc(80vh - 40px);
-    box-sizing: border-box;
-    padding: 20px;
-    position: fixed;
+    height: calc(90vh - 40px);
 
-    margin: 20px;
+    padding: 10px 20px;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+
+    box-sizing: border-box;
+
+    position: fixed;
 
     z-index: 4;
 
-    left: 0;
-    bottom: 50%;
-    transform: translateY(50%);
     border-radius: 18px;
+
     color: white;
 }
 
-.popup h1{
+.popup h1 {
     font-family: "Anton SC", sans-serif;
     font-size: 15px;
-    
+
     margin: 20px 0px;
 }
-.popup h2{
+
+.popup h2 {
     font-family: "Anton SC", sans-serif;
     font-size: 13px;
-    
+
     margin: 20px 0px;
     color: orange;
 }
 
-.popup p, li{
+.popup p,
+li {
     font-family: "poppins", sans-serif;
     font-size: 13px;
     font-weight: 300;
     margin: 20px 0px;
     line-height: 15px;
 }
-.popup li{
+
+.popup li {
     list-style: disc;
     list-style-position: inside;
 }
 
-.highlight{
+.highlight {
     color: orange;
     font-weight: 500;
 }
 
 .popup-close {
-    left: 100%;
-    transform: translateX(-100%);
-    width: 8vw;
+    width: 80%;
     height: 8vw;
-    position: relative;
-    z-index: 5;
+
+    text-align: right;
+    position: fixed;
+    z-index: 6;
 }
 
-.popup-content{
+.popup-content {
     overflow: scroll;
     scrollbar-width: 30px;
     scrollbar-color: black;
-    height: 90%;
+    height: 100%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -70,19 +75,20 @@
         box-sizing: border-box;
         padding: 20px;
         position: fixed;
-    
+
         margin: 100px;
 
     }
 }
 
 @media only screen and (min-width: 1024px) {
-    .popup-content{
+    .popup-content {
         overflow: scroll;
         scrollbar-width: 30px;
         height: 80%;
     }
-    .popup-content::-webkit-scrollbar{
+
+    .popup-content::-webkit-scrollbar {
         background-color: transparent;
     }
 }
