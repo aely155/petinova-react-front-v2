@@ -9,6 +9,7 @@ import ProductGrid from '../../components/ProductsGrid';
 import PopUp from '../../components/PopUp';
 import { PopUpContext } from '../../contexts/popUpContext';
 import { useContext } from 'react';
+import FoodCalcBanner from '../../components/FoodCalcBanner';
 function Home() {
     const { isOpen } = useContext(PopUpContext);
     return (
@@ -33,6 +34,7 @@ function Home() {
                     <ProductSection id={14} tag={"POUCAS UNIDADES"} tagTextColor={"white"} tagColor={"black"} />
                 </ProductGrid>
                 <ProductGrid>
+                    <FoodCalcBanner />
                     <SimpleBannerSection />
                     <HorizontalBannerSection />
                 </ProductGrid>

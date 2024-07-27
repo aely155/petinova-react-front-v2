@@ -12,7 +12,7 @@ function SimpleBannerSection() {
     return (
         <div className='simple-banner-section'>
             <div className='simple-banner-section-action'>
-                <h1>EM TODA COMPRA VOCE AJUDA UMA INSTITUICAO ANIMAL</h1>
+                <h1>EM TODA COMPRA VOCE AJUDA UM ANIMAL</h1>
                 <button onClick={openPopUp}>saiba como</button>
             </div>
             <div className='simple-banner-section-img'>
