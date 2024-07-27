@@ -1,6 +1,6 @@
 .popup {
     width: calc(100vw - 40px);
-    height: calc(100vh - 40px);
+    height: calc(80vh - 40px);
     box-sizing: border-box;
     padding: 20px;
     position: fixed;
@@ -10,7 +10,8 @@
     z-index: 4;
 
     left: 0;
-    bottom: 0;
+    bottom: 50%;
+    transform: translateY(50%);
     border-radius: 18px;
     color: white;
 }
