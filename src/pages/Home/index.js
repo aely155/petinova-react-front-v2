@@ -32,8 +32,10 @@ function Home() {
                     <ProductSection id={32} tag={"NOVO"} tagTextColor={"white"} tagColor={"red"} />
                     <ProductSection id={14} tag={"POUCAS UNIDADES"} tagTextColor={"white"} tagColor={"black"} />
                 </ProductGrid>
-                <SimpleBannerSection />
-                <HorizontalBannerSection />
+                <ProductGrid>
+                    <SimpleBannerSection />
+                    <HorizontalBannerSection />
+                </ProductGrid>
             </Main>
         </>
     );
