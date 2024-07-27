@@ -5,7 +5,7 @@
 
     display: grid;
     grid-template-columns: 2fr 1fr;
-    align-items: center;
+    align-items: end;
     justify-content: center;
     margin: 10px;
     border-radius: 18px;
@@ -44,11 +44,10 @@
     position: absolute;
     left: 45%;
     height: 250px;
-    transform: translateY(-20px);
 }
 
 .simple-banner-section-img img {
-    height: 250px;
+    height: 265px;
 }
 
 @media only screen and (min-width: 360px) {
