@@ -26,15 +26,15 @@ function Menu() {
                         <div onClick={() => { navigate('/products'); setMenuIsOpen(false) }} className='menu-item'>
                             PRODUTOS
                         </div>
-                        <div className='menu-item'>
-                            AJUDE UM ANIMAL
+                        <div onClick={() => { navigate('/pet-food'); setMenuIsOpen(false) }} className='menu-item'>
+                        CALCULADORA DE NUTRIÇÃO PARA ANIMAIS
                         </div>
                         <div onClick={() => { navigate('/contact'); setMenuIsOpen(false) }} className='menu-item'>
                             CONTATO
                         </div>
                     </div>
                     <div className='close-menu'
-                        onClick={ ()=>setMenuIsOpen(false)}
+                        onClick={() => setMenuIsOpen(false)}
                     >
                     </div>
                 </>
