@@ -22,6 +22,8 @@ function Login() {
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
 
+    const [tittle, setTittle] = useState('Faça login')
+
     const validateForm = () => {
         const newErrors = {};
 
@@ -73,7 +75,13 @@ function Login() {
         if (token) {
             navigate(-1)
         }
-    }, [token, navigate])
+        console.log(previousPage)
+        if (previousPage === "pet-food") {
+            setTittle("Faça login para usar a calculadora")
+        } else if (previousPage === "product") {
+            setTittle("Faça login para continuar a comprar");
+        }
+    }, [token, navigate, setTittle, previousPage])
 
     return (
         <>
@@ -81,7 +89,7 @@ function Login() {
             <Header />
             <LateralButtons />
             <Main>
-                <LoginForm tittle={'Faça login'}>
+                <LoginForm tittle={tittle}>
                     <InputForm value={email} onchange={setEmail} label={"Email:"} />
                     {errors.email && <ErrorLogin error={errors.email} />}
                     <InputForm value={password} onchange={setPassword} label={"Senha:"} type="password" />
@@ -89,7 +97,7 @@ function Login() {
                     {errors.apiError && <ErrorLogin error={errors.apiError} />}
                     <ButtonLogin onclick={login} bg={""} text={"Entrar"} />
                     <ButtonLogin
-                        onclick={()=>{
+                        onclick={() => {
                             navigate("/register/login")
                         }}
                         alternate={true}

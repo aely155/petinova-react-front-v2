@@ -44,6 +44,10 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
+    path: "/login/:previousPage",
+    element: <Login />,
+  },
+  {
     path: "/register",
     element:
       <Register />

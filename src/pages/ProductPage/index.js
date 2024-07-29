@@ -20,10 +20,12 @@ function ProductPage() {
     const [product, setProduct] = useState({})
     const [description, setDescription] = useState([])
 
+    const [previousPage, setPreviousPage] = useState()
+
     const createCheckout = () => {
         const token = localStorage.getItem('token');
         if (!token) {
-            navigate('/login')
+            navigate(`/login/${previousPage[1]}`)
             return
         }
         axios.post(`${apiUrl}api/stripe/create-checkout-session`, { products: [product], id: userData.id }).then((response) => {
@@ -33,11 +35,14 @@ function ProductPage() {
 
 
     useEffect(() => {
+        let url = window.location.pathname
+        setPreviousPage(url.split('/'))
+        console.log(previousPage)
         axios.get(`${apiUrl}api/products/id/${productId}`).then((res) => {
             setProduct(res.data)
-            setDescription(res.data.description.split('.'))
+            setDescription(res.data.description.split('.')[0])
         })
-    }, [productId, apiUrl])
+    }, [productId, apiUrl, setPreviousPage])
 
     return (
         <>
@@ -60,7 +65,7 @@ function ProductPage() {
                             </div>
                             <div className="product-page-buttons">
                                 <div className="product-page-buttons">
-                                    <button onClick={()=>{
+                                    <button onClick={() => {
                                         addToCart(product)
                                     }}>Adicionar ao carrinho</button>
                                     <button onClick={createCheckout}>Comprar agora</button>
@@ -72,7 +77,7 @@ function ProductPage() {
                                 />
                             </div>
                             <div className="product-page-description">
-                                {description.map(description => {
+                                {typeof (description) === "array" && description.map(description => {
                                     return (
                                         <p>
                                             {description}

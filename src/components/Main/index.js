@@ -1,8 +1,8 @@
 import './style.css'
 
-function Main({ children }) {
+function Main({ children, style }) {
     return (
-        <main className='main'>
+        <main className='main' style={style}>
             {children}
         </main>
     );

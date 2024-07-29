@@ -42,7 +42,11 @@ function MyProfile() {
             <Cart />
             <LateralButtons />
             <Header />
-            <Main>
+            <Main
+                style={{
+                    maxWidth: "500px"
+                }}
+            >
                 <ProfileCard />
                 <OptionButton onclick={toggleOrderIsOpen} bg="gray" color='white'>
                     <FiPackage style={{ marginRight: "20px" }} />
