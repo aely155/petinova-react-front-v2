@@ -27,7 +27,7 @@ function Menu() {
                             PRODUTOS
                         </div>
                         <div onClick={() => { navigate('/pet-food'); setMenuIsOpen(false) }} className='menu-item'>
-                        CALCULADORA DE NUTRIÇÃO PARA ANIMAIS
+                            CALCULADORA DE NUTRIÇÃO PARA ANIMAIS
                         </div>
                         <div onClick={() => { navigate('/contact'); setMenuIsOpen(false) }} className='menu-item'>
                             CONTATO
