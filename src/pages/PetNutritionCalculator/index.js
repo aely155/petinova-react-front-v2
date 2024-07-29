@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const PetNutritionCalculator = () => {
-    const apiUrl = process.env. REACT_APP_API_URL
+    const apiUrl = process.env.REACT_APP_API_URL
     const [species, setSpecies] = useState('dog');
     const [age, setAge] = useState('');
     const [weight, setWeight] = useState('');
@@ -12,16 +12,15 @@ const PetNutritionCalculator = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         try {
-            const response = await axios.post(`${apiUrl}/api/pet-food/calculate`, {
+            const response = await axios.post(`${apiUrl}api/pet-food/calculate`, {
                 species,
                 age: parseFloat(age),
                 weight: parseFloat(weight),
                 activityLevel,
             });
 
-            setResult(response.data.message);
+            setResult(response.data);
             setError('');
         } catch (err) {
             setError(err.response ? err.response.data : 'Erro ao calcular a nutrição');
@@ -82,9 +81,7 @@ const PetNutritionCalculator = () => {
             </form>
 
             {error && <p style={{ color: 'red' }}>{error}</p>}
-            <div
-                dangerouslySetInnerHTML={{ __html: result }}
-            />
+            <div dangerouslySetInnerHTML={{ __html: result }} />
         </div>
     );
 };

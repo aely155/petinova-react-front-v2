@@ -16,6 +16,7 @@ import ProtectedRoute from './ProtectedRoute'
 import ContactPage from "./pages/ContactPage";
 import ProductsPage from "./pages/ProductsPage";
 import { PopUpProvider } from "./contexts/popUpContext";
+import PetNutritionCalculator from "./pages/PetNutritionCalculator";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,13 @@ const router = createBrowserRouter([
     element:
       <ProtectedRoute>
         <MyProfile />
+      </ProtectedRoute>,
+  },
+  {
+    path: "/pet-food",
+    element:
+      <ProtectedRoute>
+        <PetNutritionCalculator />
       </ProtectedRoute>,
   },
 ]);
