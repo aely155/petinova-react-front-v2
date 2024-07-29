@@ -79,7 +79,7 @@ function Login() {
         if (previousPage === "pet-food") {
             setTittle("Faça login para usar a calculadora")
         } else if (previousPage === "product") {
-            setTittle("Faça login para continuar a comprar");
+            setTittle("Faça login para continuar comprando");
         }
     }, [token, navigate, setTittle, previousPage])
 
