@@ -7,18 +7,20 @@ function PopUp({ color, children, close, style }) {
     return (
         <>
             {visible &&
-                <div
-                    className="popup at-item"
-                    style={{
-                        backgroundColor: color,
-                        ...style
-                    }}
-                >
-                    <div className='popup-close'>
-                        <SlClose onClick={close} color='white' size={25} />
-                    </div>
-                    <div className='popup-content'>
-                        {children}
+                <div className='popup-container'>
+                    <div
+                        className="popup at-item"
+                        style={{
+                            backgroundColor: color,
+                            ...style
+                        }}
+                    >
+                        <div className='popup-close'>
+                            <SlClose onClick={close} color='white' size={25} />
+                        </div>
+                        <div className='popup-content'>
+                            {children}
+                        </div>
                     </div>
                 </div>
             }

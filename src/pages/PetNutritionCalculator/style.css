@@ -1,7 +1,7 @@
 .petbutritioncalculator {
     padding: 50px 30px;
     font-family: "Poppins", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: radial-gradient( circle farthest-corner at 48.4% 47.5%,  rgba(122,183,255,1) 0%, rgba(21,83,161,1) 90% );
+    background-image: radial-gradient(circle farthest-corner at 48.4% 47.5%, rgba(122, 183, 255, 1) 0%, rgba(21, 83, 161, 1) 90%);
     margin: 10px 30px;
     border-radius: 18px;
     color: white;
@@ -23,7 +23,8 @@ button {
 }
 
 .petbutritioncalculator button {
-    background-image: linear-gradient( 109.6deg,  rgba(245,56,56,1) 11.2%, rgba(234,192,117,1) 78% );    color: white;
+    background-image: linear-gradient(109.6deg, rgba(245, 56, 56, 1) 11.2%, rgba(234, 192, 117, 1) 78%);
+    color: white;
     font-weight: 500;
     border: none;
 }
@@ -34,4 +35,11 @@ button {
     margin-bottom: 25px;
     color: white;
     letter-spacing: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+    .petbutritioncalculator {
+        max-width: 400px;
+        margin: 50px auto;
+    }
 }
