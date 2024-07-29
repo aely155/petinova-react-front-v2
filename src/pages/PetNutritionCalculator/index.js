@@ -5,6 +5,7 @@ import LateralButtons from '../../components/LateralButtons';
 import Cart from '../../components/Cart';
 import PopUp from '../../components/PopUp';
 import { PopUpContext } from '../../contexts/popUpContext';
+import dogs from './dogs.png'
 import './style.css'
 
 const PetNutritionCalculator = () => {
@@ -46,7 +47,17 @@ const PetNutritionCalculator = () => {
                 <PopUp
                     close={() => setResultIsOpen(false)}
                     color={"#0064A2"}
+                    style={{
+                        textAlign: "center"
+                    }}
                 >
+                    <img
+                        style={{
+                            height: "150px",
+                            marginBottom: "-50px"
+                        }}
+                        src={dogs}
+                    />
                     <div
                         style={{
                             marginTop: "50px",

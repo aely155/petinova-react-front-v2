@@ -2,7 +2,7 @@ import { SlClose } from 'react-icons/sl';
 import './style.css'
 import { useState } from 'react';
 
-function PopUp({ color, children, close }) {
+function PopUp({ color, children, close, style }) {
     const [visible, setVisible] = useState(true)
     return (
         <>
@@ -10,7 +10,8 @@ function PopUp({ color, children, close }) {
                 <div
                     className="popup at-item"
                     style={{
-                        backgroundColor: color
+                        backgroundColor: color,
+                        ...style
                     }}
                 >
                     <div className='popup-close'>
