@@ -5,6 +5,8 @@ import LateralButtons from '../../components/LateralButtons';
 import Cart from '../../components/Cart';
 import PopUp from '../../components/PopUp';
 import { PopUpContext } from '../../contexts/popUpContext';
+import './style.css'
+
 const PetNutritionCalculator = () => {
     const apiUrl = process.env.REACT_APP_API_URL
     const [species, setSpecies] = useState('dog');
@@ -58,12 +60,7 @@ const PetNutritionCalculator = () => {
             <Cart />
             <Header />
             <LateralButtons />
-            <div
-                style={{
-                    padding: "20px",
-                    fontFamily: "Poppins"
-                }}
-            >
+            <div className='petbutritioncalculator'>
                 <h1>Calculadora de Nutrição para Animais</h1>
                 <form onSubmit={handleSubmit}>
                     <div>
