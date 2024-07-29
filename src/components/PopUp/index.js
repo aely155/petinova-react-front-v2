@@ -1,16 +1,9 @@
 import { SlClose } from 'react-icons/sl';
 import './style.css'
-import { useContext, useState } from 'react';
-import { PopUpContext } from '../../contexts/popUpContext';
+import { useState } from 'react';
 
-
-function PopUp({ color, children, tittle, text, action, button }) {
-    const { setIsOpen } = useContext(PopUpContext);
-
+function PopUp({ color, children, close }) {
     const [visible, setVisible] = useState(true)
-    const turnOff = () => {
-        setVisible(false)
-    }
     return (
         <>
             {visible &&
@@ -21,7 +14,7 @@ function PopUp({ color, children, tittle, text, action, button }) {
                     }}
                 >
                     <div className='popup-close'>
-                        <SlClose onClick={() => setIsOpen(false)} color='white' size={25} />
+                        <SlClose onClick={close} color='white' size={25} />
                     </div>
                     <div className='popup-content'>
                         {children}
