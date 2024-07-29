@@ -2,7 +2,7 @@
     padding: 50px 30px;
     font-family: "Poppins", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: radial-gradient( circle farthest-corner at 48.4% 47.5%,  rgba(122,183,255,1) 0%, rgba(21,83,161,1) 90% );
-    margin: 10px;
+    margin: 10px 30px;
     border-radius: 18px;
     color: white;
 }
@@ -19,6 +19,7 @@ button {
     box-sizing: border-box;
     margin-bottom: 10px;
     margin-top: 10px;
+    color: black;
 }
 
 .petbutritioncalculator button {
