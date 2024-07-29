@@ -51,6 +51,7 @@ li {
 }
 
 .popup li {
+    font-size: 19px;
     list-style: disc;
     list-style-position: inside;
 }
