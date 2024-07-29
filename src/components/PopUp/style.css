@@ -4,11 +4,12 @@
     z-index: 4;
     width: 100vw;
     height: 100vh;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .popup {
     width: 90%;
     max-width: 600px;
@@ -45,7 +46,7 @@
     font-size: 13px;
     text-align: left;
     font-weight: 600;
-    
+
     margin: 20px 0px;
 }
 
@@ -60,7 +61,7 @@ li {
 }
 
 .popup li {
-    list-style-image: url("./right-arrow .png") ;
+    list-style-image: url("./right-arrow .png");
     list-style-position: inside;
 }
 
@@ -70,10 +71,8 @@ li {
 }
 
 .popup-close {
-    width: 100%;
+    width: 105%;
     height: 25px;
-    padding: 5px;
-
     text-align: right;
     z-index: 6;
 }
