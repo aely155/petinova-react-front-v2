@@ -4,7 +4,7 @@ import LoginForm from '../../components/LoginForm';
 import Main from '../../components/Main';
 import InputForm from '../../components/InputLogin';
 import ButtonLogin from '../../components/ButtonLogin';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ErrorLogin from '../../components/ErrorLogin';
 import axios from 'axios';
@@ -12,6 +12,8 @@ import Cart from '../../components/Cart';
 import LateralButtons from '../../components/LateralButtons';
 
 function Login() {
+    const { previousPage } = useParams()
+
     const token = localStorage.getItem('token');
     const navigate = useNavigate();
     const apiUrl = process.env.REACT_APP_API_URL;
@@ -52,7 +54,11 @@ function Login() {
                 const token = response.data.token;
                 localStorage.setItem('userData', JSON.stringify(userData));
                 localStorage.setItem('token', token);                // Exemplo: navegue para a página inicial
-                navigate('/');
+                if (previousPage) {
+                    navigate(previousPage);
+                } else {
+                    navigate(-1);
+                }
             } catch (error) {
                 console.error('Erro ao fazer login:', error);
                 setErrors(prevErrors => ({
@@ -75,14 +81,20 @@ function Login() {
             <Header />
             <LateralButtons />
             <Main>
-                <LoginForm title={'Entrar'}>
+                <LoginForm tittle={'Faça login'}>
                     <InputForm value={email} onchange={setEmail} label={"Email:"} />
                     {errors.email && <ErrorLogin error={errors.email} />}
                     <InputForm value={password} onchange={setPassword} label={"Senha:"} type="password" />
                     {errors.password && <ErrorLogin error={errors.password} />}
                     {errors.apiError && <ErrorLogin error={errors.apiError} />}
                     <ButtonLogin onclick={login} bg={""} text={"Entrar"} />
-                    <ButtonLogin onclick={() => navigate('/register')} alternate={true} text={"Registrar"} />
+                    <ButtonLogin
+                        onclick={()=>{
+                            navigate("/register/login")
+                        }}
+                        alternate={true}
+                        text={"Registrar"}
+                    />
                 </LoginForm>
             </Main>
         </>

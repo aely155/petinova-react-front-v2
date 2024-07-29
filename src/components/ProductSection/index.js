@@ -30,8 +30,9 @@ function ProductSection({ id, tagTextColor, tagColor, tag }) {
             className='product-section elemento-flutuante'
             style={{
                 color: tagTextColor,
-                backgroundImage: `url(${product.urlimage})`,
+                backgroundImage: `url(${product.urlimage})`
             }}
+            onClick={() => navigate(`/product/${product.id}`)}
         >
             <div className='product-tag' style={{ backgroundColor: tagColor }}>
                 {tag}
@@ -42,7 +43,7 @@ function ProductSection({ id, tagTextColor, tagColor, tag }) {
                 <p>
                     {truncatedString}
                 </p>
-                <button onClick={() => navigate(`/product/${product.id}`)}>
+                <button>
                     Eu quero
                 </button>
             </div>

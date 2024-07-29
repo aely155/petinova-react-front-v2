@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: "Anton SC", sans-serif;
     padding: 20px 50px;
+    max-width: 500px;
 }
 
 .login-form h1 {
@@ -15,6 +16,6 @@
 
 @media only screen and (min-width: 1024px) {
     .login-form {
-        padding: 20px 150px;
+        margin: 20px auto;
     }
 }

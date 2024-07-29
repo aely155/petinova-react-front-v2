@@ -4,12 +4,15 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    max-width: 500px;
+    margin: 0 auto;
 }
-.product-page img{
+
+.product-page img {
     width: 50%;
 }
 
-.product-page h1{
+.product-page h1 {
     font-size: 30px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -17,7 +20,8 @@
     color: #F5842D;
     text-align: left;
 }
-.product-page h2{
+
+.product-page h2 {
     font-size: 20px;
     font-weight: 400;
     color: #F5842D;
@@ -25,7 +29,7 @@
     font-family: "Poppins", sans-serif;
 }
 
-.product-page h3{
+.product-page h3 {
     font-size: 10px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -40,7 +44,8 @@
     bottom: 15px;
     padding: 15px;
 }
-.product-page h4{
+
+.product-page h4 {
     font-size: 15px;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
@@ -49,10 +54,11 @@
     color: #181818;
 }
 
-.product-page-buttons{
+.product-page-buttons {
     width: 100%;
 }
-.product-page-buttons button:first-child{
+
+.product-page-buttons button:first-child {
     color: #F5842D;
     padding-left: 20px;
     width: 100%;
@@ -62,7 +68,7 @@
     margin-top: 20px;
 }
 
-.product-page-buttons button:last-child{
+.product-page-buttons button:last-child {
     background-color: #F5842D;
     color: white;
     font-weight: 500;
@@ -75,14 +81,14 @@
     margin-bottom: 20px;
 }
 
-.product-page p{
+.product-page p {
     margin: 7px 5%;
     text-align: left;
     font-family: "Poppins", sans-serif;
     font-size: 12px;
 }
 
-.product-page-description{
+.product-page-description {
     width: 100%;
     padding: 20px 10px;
     border-radius: 18px;
@@ -91,7 +97,7 @@
     color: white;
 }
 
-.product-page-shiping{
+.product-page-shiping {
     background-image: url('./container.jpg');
     background-size: cover;
     background-position: center;
@@ -102,7 +108,7 @@
     margin-bottom: 20px;
 }
 
-.product-page-tab{
+.product-page-tab {
     width: 60px;
     height: 30px;
     background-color: #F5842D;
@@ -119,7 +125,11 @@
 }
 
 @media only screen and (min-width: 1024px) {
-    .product-page img{
+    .product-page-tab {
+        left: 85%;
+    }
+
+    .product-page img {
         width: 25%;
     }
 }

@@ -4,7 +4,7 @@ import LoginForm from '../../components/LoginForm';
 import Main from '../../components/Main';
 import InputForm from '../../components/InputLogin';
 import ButtonLogin from '../../components/ButtonLogin';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams, } from 'react-router-dom';
 import { useState } from 'react';
 import ErrorLogin from '../../components/ErrorLogin';
 import axios from 'axios';
@@ -12,6 +12,8 @@ import LateralButtons from '../../components/LateralButtons';
 import Cart from '../../components/Cart';
 
 function Register() {
+    const { previousPage } = useParams()
+
     const navigate = useNavigate()
     const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -68,7 +70,11 @@ function Register() {
                     email: email.toLowerCase(),
                     password
                 });
-                navigate('/login');
+                if (previousPage === "login") {
+                    navigate(-2);
+                } else {
+                    navigate('/login');
+                }
             } catch (error) {
                 console.error('Erro ao registrar usuário:', error);
                 setErrors(prevErrors => ({

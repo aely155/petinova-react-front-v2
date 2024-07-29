@@ -45,7 +45,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/register",
-    element: <Register />,
+    element:
+      <Register />
+  },
+  {
+    path: "/register/:previousPage",
+    element:
+      <Register />
   },
   {
     path: "/profile",
@@ -56,6 +62,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/pet-food",
+    element:
+      <ProtectedRoute>
+        <PetNutritionCalculator />
+      </ProtectedRoute>,
+  },
+  {
+    path: "/pet-food/:previousPage",
     element:
       <ProtectedRoute>
         <PetNutritionCalculator />
