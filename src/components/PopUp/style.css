@@ -47,7 +47,6 @@
     font-weight: 600;
     
     margin: 20px 0px;
-    color: #ff5100;
 }
 
 .popup p,
@@ -81,8 +80,6 @@ li {
 
 .popup-content {
     overflow: scroll;
-    scrollbar-width: 30px;
-    scrollbar-color: black;
     height: calc(100% - 45px);
     border-radius: 18px;
 }
