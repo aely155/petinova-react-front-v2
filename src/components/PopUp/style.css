@@ -82,6 +82,7 @@ li {
     overflow: scroll;
     height: calc(100% - 45px);
     border-radius: 18px;
+    margin-top: 10px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -89,7 +90,6 @@ li {
         width: calc(100vw - 200px);
         height: calc(100vh - 200px);
         box-sizing: border-box;
-        padding: 20px;
         position: fixed;
 
         margin: 100px;
