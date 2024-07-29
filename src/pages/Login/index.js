@@ -57,7 +57,7 @@ function Login() {
                 localStorage.setItem('userData', JSON.stringify(userData));
                 localStorage.setItem('token', token);                // Exemplo: navegue para a página inicial
                 if (previousPage) {
-                    navigate(previousPage);
+                    navigate(`/${previousPage}`);
                 } else {
                     navigate(-1);
                 }
