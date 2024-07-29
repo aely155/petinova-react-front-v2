@@ -28,6 +28,7 @@
     font-size: 15px;
 
     margin: 20px 0px;
+    color: #ff5100;
 
 }
 
@@ -36,7 +37,7 @@
     font-size: 13px;
     
     margin: 20px 0px;
-    color: orange;
+    color: #ff5100;
     
     font-weight: 600;
 }
@@ -51,8 +52,7 @@ li {
 }
 
 .popup li {
-    font-size: 19px;
-    list-style: disc;
+    list-style-image: url("./right-arrow .png") ;
     list-style-position: inside;
 }
 
