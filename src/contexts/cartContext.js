@@ -1,5 +1,5 @@
 // CartContext.js
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
 // Criar o contexto
 const CartContext = createContext();
@@ -11,7 +11,7 @@ export const CartProvider = ({ children }) => {
 
   // Adicionar um item ao carrinho
   const addToCart = (item) => {
-    if(!item.price){
+    if (!item.price) {
       return
     }
     setCart((prevCart) => [...prevCart, item]);
@@ -31,9 +31,21 @@ export const CartProvider = ({ children }) => {
 
   // Função para obter o valor total do carrinho
   const getTotalCartValue = () => {
-    const total = cart.reduce((total, item) => total +  Number(item.price), 0);
+    const total = cart.reduce((total, item) => total + Number(item.price), 0);
     return total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   };
+
+  useEffect(() => {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+  }, []);
+
+  // Salvar o carrinho no Local Storage
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
   return (
     <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, cartIsOpen, setCartIsOpen, getTotalCartValue }}>
