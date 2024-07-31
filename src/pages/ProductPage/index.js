@@ -37,10 +37,9 @@ function ProductPage() {
     useEffect(() => {
         let url = window.location.pathname
         setPreviousPage(url.split('/'))
-        console.log(previousPage)
         axios.get(`${apiUrl}api/products/id/${productId}`).then((res) => {
             setProduct(res.data)
-            setDescription(res.data.description.split('.')[0])
+            setDescription(res.data.description.split('.'))
         })
     }, [productId, apiUrl, setPreviousPage])
 
@@ -54,8 +53,7 @@ function ProductPage() {
                     <>
                         <div className="product-page">
                             <div className="product-page-tab">
-                                Frete
-                                Gratis
+                                <h1>Frete grátis</h1>
                             </div>
                             <img src={product.urlimage} />
                             <div>
@@ -77,13 +75,19 @@ function ProductPage() {
                                 />
                             </div>
                             <div className="product-page-description">
-                                {typeof (description) === "array" && description.map(description => {
-                                    return (
+                                {
+                                    typeof (description) === "object" ?
+                                        description.map(description => {
+                                            return (
+                                                <p>
+                                                    {description}
+                                                </p>
+                                            )
+                                        }) :
                                         <p>
                                             {description}
                                         </p>
-                                    )
-                                })}
+                                }
                             </div>
                             <iframe style={{ borderRadius: "25px", margin: "20px 0px" }} width="100%" height="215" src="https://www.youtube.com/embed/Icdew6aFnFU?si=OlVaPHbgO_h4BKBy&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
