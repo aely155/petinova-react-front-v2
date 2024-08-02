@@ -1,5 +1,5 @@
 .header-container {
-    height: 300px;
+    height: 320px;
     
     background-image: url('./sun.jpg');
     background-size: cover;
@@ -63,6 +63,7 @@
 
 .header-cat img {
     height: 410px;
+    transform: translateY(-50px);
 }
 
 .header-hamburger {
