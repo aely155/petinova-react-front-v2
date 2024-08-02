@@ -32,7 +32,13 @@ function ProductSection({ id, tagTextColor, tagColor, tag }) {
                 color: tagTextColor,
                 backgroundImage: `url(${product.urlimage})`
             }}
-            onClick={() => navigate(`/product/${product.id}`)}
+            onClick={() => {
+                navigate(`/product/${product.id}`)
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Isso faz a rolagem ser suave
+                  });
+            }}
         >
             <div className='product-tag' style={{ backgroundColor: tagColor }}>
                 {tag}

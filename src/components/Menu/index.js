@@ -26,24 +26,86 @@ function Menu() {
         <>
             {menuIsOpen &&
                 <div className='menu bounceInDown'>
-                    {userData ?
-                        <div onClick={() => { navigate('/profile'); setMenuIsOpen(false) }} className='menu-item'>
+                    {userData
+                        ?
+                        <div
+                            onClick={() => {
+                                navigate('/profile');
+                                setMenuIsOpen(false)
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: "smooth" // Isso faz a rolagem ser suave
+                                });
+                            }}
+                            className='menu-item'
+                        >
                             {userData.fullname} | MEU PERFIL
-                        </div> :
-                        <div onClick={() => { navigate('/login'); setMenuIsOpen(false) }} className='menu-item'>
+                        </div>
+                        :
+                        <div
+                            onClick={() => {
+                                navigate('/login');
+                                setMenuIsOpen(false)
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: "smooth" // Isso faz a rolagem ser suave
+                                });
+                            }}
+                            className='menu-item'
+                        >
                             ENTRAR | REGISTRAR
                         </div>
                     }
-                    <div onClick={() => { navigate('/'); setMenuIsOpen(false) }} className='menu-item'>
+                    <div
+                        onClick={() => {
+                            navigate('/');
+                            setMenuIsOpen(false)
+                            window.scrollTo({
+                                top: 0,
+                                behavior: "smooth" // Isso faz a rolagem ser suave
+                            });
+                        }}
+                        className='menu-item'
+                    >
                         INÍCIO
                     </div>
-                    <div onClick={() => { navigate('/products'); setMenuIsOpen(false) }} className='menu-item'>
+                    <div
+                        onClick={() => {
+                            navigate('/products');
+                            setMenuIsOpen(false)
+                            window.scrollTo({
+                                top: 0,
+                                behavior: "smooth" // Isso faz a rolagem ser suave
+                            });
+                        }}
+                        className='menu-item'
+                    >
                         PRODUTOS
                     </div>
-                    <div onClick={() => { navigate('/pet-food'); setMenuIsOpen(false) }} className='menu-item'>
+                    <div
+                        onClick={() => {
+                            navigate('/pet-food');
+                            setMenuIsOpen(false)
+                            window.scrollTo({
+                                top: 0,
+                                behavior: "smooth" // Isso faz a rolagem ser suave
+                            });
+                        }}
+                        className='menu-item'
+                    >
                         CALCULADORA DE NUTRIÇÃO PARA ANIMAIS
                     </div>
-                    <div onClick={() => { navigate('/contact'); setMenuIsOpen(false) }} className='menu-item'>
+                    <div
+                        onClick={() => {
+                            navigate('/contact');
+                            setMenuIsOpen(false)
+                            window.scrollTo({
+                                top: 0,
+                                behavior: "smooth" // Isso faz a rolagem ser suave
+                            });
+                        }}
+                        className='menu-item'
+                    >
                         CONTATO
                     </div>
                 </div>
