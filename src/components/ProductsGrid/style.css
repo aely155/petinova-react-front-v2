@@ -1,6 +1,7 @@
 .product-grid{
     display: grid;
     grid-template-columns: 1fr;
+    box-sizing: border-box;
 }
 
 @media only screen and (min-width: 768px) {

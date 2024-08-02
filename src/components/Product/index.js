@@ -5,7 +5,10 @@ function Product({ product }) {
     const navigate = useNavigate()
     return (
         <div
-            onClick={() => navigate(`/product/${product.id}`)}
+            onClick={() => {
+                navigate(`/product/${product.id}`)
+                window.scrollTo(0, 0);
+            }}
             className='product'
         >
             <img alt={product.name} src={product.urlimage} />

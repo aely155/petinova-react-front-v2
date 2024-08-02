@@ -3,6 +3,7 @@ import { useCart } from '../../contexts/cartContext';
 import OrderItem from '../OrderItem';
 import './style.css'
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Cart() {
     const navigate = useNavigate()
@@ -12,7 +13,7 @@ function Cart() {
     const { cart } = useCart();
 
     const createCheckout = () => {
-        if(!userData){
+        if (!userData) {
             navigate('/login')
         }
         axios.post(`${apiUrl}api/stripe/create-checkout-session`, { products: cart, id: userData.id }).then((response) => {
@@ -20,13 +21,27 @@ function Cart() {
         })
     }
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            const menuElement = document.getElementsByClassName('cart');
+            if (menuElement[0] && !menuElement[0].contains(event.target)) {
+                setCartIsOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown',
+                handleClickOutside);
+        };
+    }, [setCartIsOpen]);
+
     return (
         <>
             {cartIsOpen &&
                 <div className='cart-container bounceInUp'>
-                    <div onClick={() => setCartIsOpen(!cartIsOpen)} className='close-cart'></div>
                     <div className='cart'>
-                        <h1>Meus Carrinho</h1>
+                        <h1>Meu Carrinho</h1>
                         {cart.map((product, index) => {
                             return (
                                 <OrderItem index={index} product={product} />

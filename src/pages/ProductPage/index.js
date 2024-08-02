@@ -55,7 +55,7 @@ function ProductPage() {
                             <div className="product-page-tab">
                                 <h1>Frete grátis</h1>
                             </div>
-                            <img src={product.urlimage} />
+                            <img src={product.urlimage} alt={product.name}/>
                             <div>
                                 <h2>{product.name}</h2>
                                 <h4>Por</h4>

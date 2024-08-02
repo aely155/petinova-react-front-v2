@@ -9,7 +9,7 @@ function HorizontalBannerSection() {
                 <h1>
                     RECEBA SUA COMPRA EM ATé CINCO DIAS
                 </h1>
-                <FaTruckFast size={30} style={{marginTop:"10px"}} />
+                <FaTruckFast size={30} style={{margin:"10px"}} />
             </div>
         </div>
     );

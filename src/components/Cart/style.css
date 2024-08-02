@@ -37,11 +37,6 @@
     color: #F38962;
 
 }
-
-.close-cart {
-    height: calc(100vh - 250px);
-}
-
 .cart-action{
     width: 100%;
 }

@@ -1,7 +1,8 @@
 import './style.css'
 import cat from './cat.png'
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 function FoodCalcBanner() {
+    const navigate = useNavigate()
     return (
         <div className='foodcalcbanner'>
             <img src={cat} alt='calculadora de ração gato segurnado pote de ração' />
@@ -10,9 +11,14 @@ function FoodCalcBanner() {
 
                 <div className='foodcalcbanner-content-box'>
                     <p>Encontrar a quantidade certa de alimento para seu cão ou gato é essencial para manter a saúde e a felicidade do seu pet. A porção ideal depende de vários fatores, como idade, peso e nível de atividade.</p>
-                    <Link to={'/pet-food'}>
-                        <button>Quero descobrir</button>
-                    </Link>
+                    <button
+                        onClick={() => {
+                            navigate('/pet-food')
+                            window.scrollTo(0, 0);
+                        }}
+                    >
+                        Quero descobrir
+                    </button>
                 </div>
             </div>
         </div>

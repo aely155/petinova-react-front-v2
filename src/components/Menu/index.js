@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { MenuContext } from '../../contexts/menuContext';
 import './style.css'
 import { useNavigate } from 'react-router-dom';
@@ -7,37 +7,46 @@ function Menu() {
     const userData = JSON.parse(storedUser);
     const { menuIsOpen, setMenuIsOpen } = useContext(MenuContext);
     const navigate = useNavigate()
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            const menuElement = document.getElementsByClassName('menu');
+            if ((menuElement[0] && !menuElement[0].contains(event.target))) {
+                setMenuIsOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown',
+                handleClickOutside);
+        };
+    }, [setMenuIsOpen]);
+
     return (
         <>
             {menuIsOpen &&
-                <>
-                    <div className='menu bounceInDown'>
-                        {userData ?
-                            <div onClick={() => { navigate('/profile'); setMenuIsOpen(false) }} className='menu-item'>
-                                {userData.fullname} | MEU PERFIL
-                            </div> :
-                            <div onClick={() => { navigate('/login'); setMenuIsOpen(false) }} className='menu-item'>
-                                ENTRAR | REGISTRAR
-                            </div>
-                        }
-                        <div onClick={() => { navigate('/'); setMenuIsOpen(false) }} className='menu-item'>
-                            INÍCIO
+                <div className='menu bounceInDown'>
+                    {userData ?
+                        <div onClick={() => { navigate('/profile'); setMenuIsOpen(false) }} className='menu-item'>
+                            {userData.fullname} | MEU PERFIL
+                        </div> :
+                        <div onClick={() => { navigate('/login'); setMenuIsOpen(false) }} className='menu-item'>
+                            ENTRAR | REGISTRAR
                         </div>
-                        <div onClick={() => { navigate('/products'); setMenuIsOpen(false) }} className='menu-item'>
-                            PRODUTOS
-                        </div>
-                        <div onClick={() => { navigate('/pet-food'); setMenuIsOpen(false) }} className='menu-item'>
-                            CALCULADORA DE NUTRIÇÃO PARA ANIMAIS
-                        </div>
-                        <div onClick={() => { navigate('/contact'); setMenuIsOpen(false) }} className='menu-item'>
-                            CONTATO
-                        </div>
+                    }
+                    <div onClick={() => { navigate('/'); setMenuIsOpen(false) }} className='menu-item'>
+                        INÍCIO
                     </div>
-                    <div className='close-menu'
-                        onClick={() => setMenuIsOpen(false)}
-                    >
+                    <div onClick={() => { navigate('/products'); setMenuIsOpen(false) }} className='menu-item'>
+                        PRODUTOS
                     </div>
-                </>
+                    <div onClick={() => { navigate('/pet-food'); setMenuIsOpen(false) }} className='menu-item'>
+                        CALCULADORA DE NUTRIÇÃO PARA ANIMAIS
+                    </div>
+                    <div onClick={() => { navigate('/contact'); setMenuIsOpen(false) }} className='menu-item'>
+                        CONTATO
+                    </div>
+                </div>
             }
         </>
     );
