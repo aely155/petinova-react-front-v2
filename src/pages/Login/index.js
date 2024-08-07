@@ -51,12 +51,13 @@ function Login() {
                     password
                 });
                 console.log(response)
-                // Se o login for bem-sucedido, salve os dados no localStorage
                 const userData = response.data.user;
                 const token = response.data.token;
                 localStorage.setItem('userData', JSON.stringify(userData));
-                localStorage.setItem('token', token);                // Exemplo: navegue para a página inicial
-                if (previousPage) {
+                localStorage.setItem('token', token); 
+                if (previousPage === "product") {
+                    navigate(-1);
+                } else if (previousPage) {
                     navigate(`/${previousPage}`);
                 } else {
                     navigate(-1);
@@ -75,7 +76,6 @@ function Login() {
         if (token) {
             navigate(-1)
         }
-        console.log(previousPage)
         if (previousPage === "pet-food") {
             setTittle("Faça login para usar a calculadora")
         } else if (previousPage === "product") {
