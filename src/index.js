@@ -67,9 +67,7 @@ const router = createBrowserRouter([
   {
     path: "/pet-food",
     element:
-      <ProtectedRoute>
-        <PetNutritionCalculator />
-      </ProtectedRoute>,
+      <PetNutritionCalculator />
   },
   {
     path: "/pet-food/:previousPage",

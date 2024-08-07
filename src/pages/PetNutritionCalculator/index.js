@@ -7,9 +7,12 @@ import PopUp from '../../components/PopUp';
 import { PopUpContext } from '../../contexts/popUpContext';
 import dogs from './dogs.png'
 import './style.css'
+import { useNavigate } from 'react-router-dom';
 
 const PetNutritionCalculator = () => {
     const apiUrl = process.env.REACT_APP_API_URL
+
+    const navigate = useNavigate()
 
     const [species, setSpecies] = useState('dog');
     const [age, setAge] = useState('');
@@ -22,6 +25,12 @@ const PetNutritionCalculator = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const token = localStorage.getItem('token');
+
+        if (!token) {
+            navigate(`/login${window.location.pathname}`)
+            return
+        }
 
         try {
             const response = await axios.post(`${apiUrl}api/pet-food/calculate`, {
@@ -38,7 +47,6 @@ const PetNutritionCalculator = () => {
             setError(err.response ? err.response.data : 'Erro ao calcular a nutrição');
             setResult('');
         }
-
     };
 
     return (
@@ -58,6 +66,7 @@ const PetNutritionCalculator = () => {
                             marginBottom: "-50px"
                         }}
                         src={dogs}
+                        alt='dog image'
                     />
                     <div
                         style={{
