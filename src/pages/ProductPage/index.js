@@ -16,7 +16,7 @@
         const userData = JSON.parse(localStorage.getItem('userData'))
 
         const { addToCart } = useCart();
-        const { productName } = useParams()
+        const { productId } = useParams()
         const [product, setProduct] = useState({})
         const [description, setDescription] = useState([])
 
@@ -37,24 +37,24 @@
         useEffect(() => {
             let url = window.location.pathname
             setPreviousPage(url.split('/'))
-            axios.get(`${apiUrl}api/products/name/${productName}`).then((res) => {
+            axios.get(`${apiUrl}api/products/id/${productId}`).then((res) => {
                 setProduct(res.data)
                 setDescription(res.data.description.split('.'))
             })
-        }, [apiUrl, setPreviousPage, productName])
+        }, [productId, apiUrl, setPreviousPage])
 
         return (
             <>
                 <Helmet>
                     <title>{`${product.name}`} | PetInovaBR</title>
                     <meta name="description" content={`Compre ${product.name} por ${product.price}. Frete grátis!.`} />
-                    <meta name="keywords" content={`produto, ${product.name}, comprar ${product.name}`} />
+                    <meta name="keywords" content={`produto, ${product.title}, comprar ${product.title}`} />
                 </Helmet>
                 <Cart />
                 <Header />
                 <LateralButtons />
                 <Main>
-                    {product && 
+                    {product &&
                         <>
                             <div className="product-page">
                                 <div className="product-page-tab">

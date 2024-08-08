@@ -8,7 +8,6 @@ function ProductSection({ id, tagTextColor, tagColor, tag }) {
     const navigate = useNavigate()
     const apiUrl = process.env.REACT_APP_API_URL;
     const productId = id
-
     const [product, setProduct] = useState({})
     function truncateString(str, num) {
         if (typeof (str) === 'string') {
@@ -33,16 +32,12 @@ function ProductSection({ id, tagTextColor, tagColor, tag }) {
                 color: tagTextColor,
                 backgroundImage: `url(${product.urlimage})`
             }}
-
             onClick={() => {
-                const formattedProductName = product.name
-                    .replace(/\s+/g, '-') // Substitui espaços por hífens
-                    .replace(/\//g, '+'); // Substitui barras por hífens
-                navigate(`/product/${formattedProductName}`);
+                navigate(`/product/${product.id}`)
                 window.scrollTo({
                     top: 0,
                     behavior: "smooth" // Isso faz a rolagem ser suave
-                });
+                  });
             }}
         >
             <div className='product-tag' style={{ backgroundColor: tagColor }}>
