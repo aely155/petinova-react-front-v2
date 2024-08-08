@@ -25,7 +25,7 @@ function Menu() {
     return (
         <>
             {menuIsOpen &&
-                <div className='menu bounceInDown'>
+                <nav className='menu bounceInDown'>
                     {userData
                         ?
                         <div
@@ -108,7 +108,7 @@ function Menu() {
                     >
                         CONTATO
                     </div>
-                </div>
+                </nav>
             }
         </>
     );
