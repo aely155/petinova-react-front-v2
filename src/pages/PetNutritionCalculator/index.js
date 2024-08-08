@@ -9,6 +9,7 @@ import { PopUpContext } from '../../contexts/popUpContext';
 import dogs from './dogs.png'
 import './style.css'
 import { useNavigate } from 'react-router-dom';
+import AdSense from '../../components/AdSense';
 
 const PetNutritionCalculator = () => {
     const apiUrl = process.env.REACT_APP_API_URL
@@ -136,7 +137,8 @@ const PetNutritionCalculator = () => {
                 {error && <p style={{ color: 'red' }}>{error}</p>}
 
             </div>
-            <NutricaoAnimal/>
+            <AdSense/>
+            <NutricaoAnimal />
         </>
     );
 };
