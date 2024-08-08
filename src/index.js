@@ -17,6 +17,7 @@ import ContactPage from "./pages/ContactPage";
 import ProductsPage from "./pages/ProductsPage";
 import { PopUpProvider } from "./contexts/popUpContext";
 import PetNutritionCalculator from "./pages/PetNutritionCalculator";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
   },
   {
 
-    path: "/product/:productId",
+    path: "/product/:productName",
     element: <ProductPage />,
   },
   {
@@ -80,12 +81,14 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <PopUpProvider>
-      <MenuProvider>
-        <CartProvider>
-          <RouterProvider router={router} />
-        </CartProvider>
-      </MenuProvider>
-    </PopUpProvider>
+    <HelmetProvider>
+      <PopUpProvider>
+        <MenuProvider>
+          <CartProvider>
+            <RouterProvider router={router} />
+          </CartProvider>
+        </MenuProvider>
+      </PopUpProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );
