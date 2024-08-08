@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from '../../components/Header';
 import LateralButtons from '../../components/LateralButtons';
 import Cart from '../../components/Cart';
+import NutricaoAnimal from '../../components/NutricaoAnimal';
 import PopUp from '../../components/PopUp';
 import { PopUpContext } from '../../contexts/popUpContext';
 import dogs from './dogs.png'
@@ -135,6 +136,7 @@ const PetNutritionCalculator = () => {
                 {error && <p style={{ color: 'red' }}>{error}</p>}
 
             </div>
+            <NutricaoAnimal/>
         </>
     );
 };
