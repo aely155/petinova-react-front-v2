@@ -94,7 +94,7 @@
                                             </p>
                                     }
                                 </div>
-                                <iframe style={{ borderRadius: "25px", margin: "20px 0px" }} width="100%" height="215" src="https://www.youtube.com/embed/Icdew6aFnFU?si=OlVaPHbgO_h4BKBy&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <iframe style={{ borderRadius: "25px", margin: "20px 0px" }} width="100%" height="215" src={`${product.urlvideo}?si=OlVaPHbgO_h4BKBy&amp;controls=0`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                         </>
                     }
