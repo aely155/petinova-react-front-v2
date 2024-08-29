@@ -21,14 +21,14 @@ function ProductPage() {
     const [description, setDescription] = useState([])
 
     const [previousPage, setPreviousPage] = useState()
-    
+
     const getYouTubeId = (url) => {
         if (!url) return null; // Adicione essa verificação
         const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
         const match = url.match(regExp);
         return (match && match[2].length === 11) ? match[2] : null;
     };
-    
+
 
     const videoId = getYouTubeId(product.urlvideo);
 
@@ -105,26 +105,26 @@ function ProductPage() {
                                 }
                             </div>
                             <div>
-      {videoId ? (
-        <iframe
-          width="560"
-          height="315"
-          style={{
-            borderRadius: '18px',
-            width: '80vw',
-            maxWidth: '600px',
-            marginTop: '20px'
-          }}
-          src={`https://www.youtube.com/embed/${videoId}`}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title="YouTube Video"
-        ></iframe>
-      ) : (
-        <p>Vídeo não disponível</p>
-      )}
-    </div>                        </div>
+                                {videoId ? (
+                                    <iframe
+                                        width="560"
+                                        height="315"
+                                        style={{
+                                            borderRadius: '18px',
+                                            width: '80vw',
+                                            maxWidth: '600px',
+                                            marginTop: '20px'
+                                        }}
+                                        src={`https://www.youtube.com/embed/${videoId}`}
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                        title="YouTube Video"
+                                    ></iframe>
+                                ) : <>
+                                </>
+                                
+                            </div>                        </div>
                     </>
                 }
             </Main>
