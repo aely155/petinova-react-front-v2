@@ -11,47 +11,45 @@ import { useNavigate, useParams } from "react-router-dom";
 import { TbTruckDelivery } from "react-icons/tb";
 
 function ProductPage() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const apiUrl = process.env.REACT_APP_API_URL;
-    const userData = JSON.parse(localStorage.getItem('userData'))
+    const userData = JSON.parse(localStorage.getItem('userData'));
 
     const { addToCart } = useCart();
-    const { productId } = useParams()
-    const [product, setProduct] = useState({})
-    const [description, setDescription] = useState([])
+    const { productId } = useParams();
+    const [product, setProduct] = useState({});
+    const [description, setDescription] = useState([]);
 
-    const [previousPage, setPreviousPage] = useState()
+    const [previousPage, setPreviousPage] = useState();
 
     const getYouTubeId = (url) => {
-        if (!url) return null; // Adicione essa verificação
+        if (!url) return null;
         const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
         const match = url.match(regExp);
         return (match && match[2].length === 11) ? match[2] : null;
     };
-
 
     const videoId = getYouTubeId(product.urlvideo);
 
     const createCheckout = () => {
         const token = localStorage.getItem('token');
         if (!token) {
-            navigate(`/login/${previousPage[1]}`)
-            return
+            navigate(`/login/${previousPage[1]}`);
+            return;
         }
         axios.post(`${apiUrl}api/stripe/create-checkout-session`, { products: [product], id: userData.id }).then((response) => {
-            window.location.href = response.data.url
-        })
-    }
-
+            window.location.href = response.data.url;
+        });
+    };
 
     useEffect(() => {
-        let url = window.location.pathname
-        setPreviousPage(url.split('/'))
+        let url = window.location.pathname;
+        setPreviousPage(url.split('/'));
         axios.get(`${apiUrl}api/products/id/${productId}`).then((res) => {
-            setProduct(res.data)
-            setDescription(res.data.description.split('.'))
-        })
-    }, [productId, apiUrl, setPreviousPage])
+            setProduct(res.data);
+            setDescription(res.data.description.split('.'));
+        });
+    }, [productId, apiUrl, setPreviousPage]);
 
     return (
         <>
@@ -79,26 +77,26 @@ function ProductPage() {
                             <div className="product-page-buttons">
                                 <div className="product-page-buttons">
                                     <button onClick={() => {
-                                        addToCart(product)
-                                    }}>Adicionar ao carrinho</button>
+                                        addToCart(product);
+                                    }}>Adicionar ao carrinho </button>
                                     <button onClick={createCheckout}>Comprar agora</button>
                                 </div>
                             </div>
                             <div className="product-page-shiping">
                                 <h3>Receba em sua casa em até 5 dias, por nossa conta!</h3>
-                                <TbTruckDelivery color="white" size={40}
-                                />
+                                <TbTruckDelivery color="white" size={40} />
                             </div>
                             <div className="product-page-description">
                                 {
-                                    typeof (description) === "object" ?
-                                        description.map(description => {
+                                    typeof (description) === "object" ? (
+                                        description.map((desc, index) => {
                                             return (
-                                                <p>
-                                                    {description}
+                                                <p key={index}>
+                                                    {desc}
                                                 </p>
-                                            )
-                                        }) :
+                                            );
+                                        })
+                                    ) :
                                         <p>
                                             {description}
                                         </p>
@@ -121,10 +119,9 @@ function ProductPage() {
                                         allowFullScreen
                                         title="YouTube Video"
                                     ></iframe>
-                                ) : <>
-                                </>
-                                
-                            </div>                        </div>
+                                ) : <></>}
+                            </div>
+                        </div>
                     </>
                 }
             </Main>
